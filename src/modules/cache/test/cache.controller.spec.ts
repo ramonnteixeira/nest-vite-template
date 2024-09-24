@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CacheController } from '../cache.controller';
-import { expect, describe, beforeEach, it } from 'vitest'
+import { expect, describe, beforeEach, it } from 'vitest';
 
 describe('CacheController', () => {
   let cacheController: CacheController;

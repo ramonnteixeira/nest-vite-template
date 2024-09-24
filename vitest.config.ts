@@ -1,7 +1,7 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
-import { VitePluginNode } from 'vite-plugin-node'
+import viteConfig from './vite.config'
 
-export default defineConfig({
+export default mergeConfig(viteConfig, defineConfig({
   test: {
     include: [
         'src/**/*.spec.ts',
@@ -10,13 +10,5 @@ export default defineConfig({
     coverage: {
       reporter: ['lcov', 'text', 'html', 'json'],
     },
-  },
-  plugins: [
-    ...VitePluginNode({
-      adapter: 'nest',
-      appPath: './src/main.ts',
-      exportName: 'app',
-      tsCompiler: 'swc',
-    })
-  ]
-})
+  }
+}));

@@ -6,27 +6,25 @@ export default defineConfig({
   server: {
     port: 3000
   },
+  base: './',
   build: {
-    rollupOptions: {
-        input: 'src/main.ts',
-        output: {
-          compact: true,
-          name: 'main',
-          format: 'module',
-        },
+    minify: 'terser',
+    terserOptions: {
+      compress: true,
+      keep_classnames: true,
+      keep_fnames: true,
     },
   },
   plugins: [
     eslint({
       useEslintrc: true,
       fix: true,
-    }),
-    ...VitePluginNode({
+    }) as any,
+    VitePluginNode({
       adapter: 'nest',
       appPath: './src/main.ts',
       exportName: 'app',
       tsCompiler: 'swc',
-      initAppOnBoot: true,
       swcOptions: {
         minify: true,
       }

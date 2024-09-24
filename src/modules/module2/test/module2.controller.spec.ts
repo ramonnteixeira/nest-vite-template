@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MyModule2Controller } from '../module2.controller';
-import { expect, describe, beforeEach, it } from 'vitest'
+import { expect, describe, beforeEach, it } from 'vitest';
 
 describe('MyModule2Controller', () => {
   let myModule2Controller: MyModule2Controller;

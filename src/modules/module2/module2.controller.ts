@@ -6,6 +6,6 @@ export class MyModule2Controller {
 
   @Get()
   getHello(): string {
-    return "module2";
+    return 'module2';
   }
 }
